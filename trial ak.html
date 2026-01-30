@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKHAND PRATAP SINGH - Instagram Influencer</title>
+    <meta name="description" content="Professional portfolio for Akhand Pratap Singh, a top Instagram influencer. Explore posts, services, and contact info.">
+    <link rel="icon" href="https://via.placeholder.com/32?text=AP" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #1e1e2e, #2a2a3e);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ffd93d;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 600px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .profile-container {
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            object-position: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 107, 107, 0.8);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 2rem 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .bio {
+            font-size: 1.2rem;
+            margin-top: 14px;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn.primary {
+            background: linear-gradient(45deg, #edd066, #342525);
+            color: #fff;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Portfolio */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 70px;
+            flex-wrap: wrap;
+        }
+
+        .gallery a {
+            text-align: center;
+        }
+
+        .gallery a img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(232, 210, 210, 0.6);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .gallery a:hover img {
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 0 45px rgba(101, 179, 172, 0.8);
+        }
+
+        .gallery a h3 {
+            margin-top: 15px;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* YouTube Section - Fixed alignment */
+        #testimonials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            min-height: 50vh;
+            justify-content: center;
+        }
+
+        .youtube-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .youtube-content p {
+            font-size: clamp(18px, 2.2vw, 32px);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .yt-link {
+            font-size: clamp(16px, 2vw, 28px);
+            color: white;
+            word-break: break-all;
+        }
+
+        blockquote {
+            font-style: italic;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 0;
+        }
+
+        /* Footer - Fixed alignment and links */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                gap: 2rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AKHAND PRATAP SINGH</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#Services">IG Commercial</a></li>
+                <li><a href="#testimonials">Youtube</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <video autoplay muted loop id="bg-video" poster="https://via.placeholder.com/1920x1080/1e1e2e/fff?text=Video+Loading">
+            <source src="C:\Users\virat\OneDrive\Documents\Akhand-\assets\ak bg suit.mp4" type="video/mp4"> <!-- Upload video here -->
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <div class="profile-container">
+                <img src="C:\Users\virat\OneDrive\Documents\Akhand-\assets\ak pic.jpeg" alt="Akhand Pratap Singh Profile" class="profile-img"> <!-- Host image -->
+            </div>
+            <h1>AKHAND PRATAP SINGH</h1>
+            <p class="bio">Hi, I’m Akhand Pratap Singh - a Fashion, Grooming & Lifestyle Content Creator, creating high-quality content that boosts brand awareness and drives traffic.</p>
+            <div class="cta-buttons">
+                <a href="https://www.instagram.com/akhandpratapsinghh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn primary">Follow on Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="gallery">
+            <a href="https://www.instagram.com/reel/DLpnv9OSgQ3/?igsh=MTVidHlpYzF1cXZmYg==" target="_blank">
+                <img src="C:\Users\virat\OneDrive\Documents\Akhand-\assets\OPPO.jpeg" alt="OPPO Post"> <!-- Host image -->
+                <h3>OPPO</h3>
+            </a>
+            <a href="https://www.instagram.com/reel/DTP4OrcEiLp/?igsh=ZnpqNzkxbXJ5NHpl" target="_blank">
+                <img src="C:\Users\virat\OneDrive\Documents\Akhand-\assets\PORTRONICS.jpeg" alt="PORTRONICS Post">
+                <h3>PORTRONICS</h3>
+            </a>
+            <a href="https://www.instagram.com/reel/C_xnPe1S0wc/?igsh=bm54ODVpeWlsa2I2" target="_blank">
+                <img src="C:\Users\virat\OneDrive\Documents\Akhand-\assets\GARNIER.jpeg" alt="GARNIER Post">
+                <h3>GARNIER</h3>
+            </a>
+            <a href="https://www.instagram.com/reel/C7mB5RvSYBA/?igsh=MWxpajFnOHk5dGVsMw==" target="_blank">
+                <img src="C:\Users\virat\OneDrive\Documents\Akhand-\assets\ENFIELD.jpeg" alt="ROYAL ENFIELD Post">
+                <h3>ROYAL ENFIELD</h3>
+            </a>
+            <a href="https://www.instagram.com/reel/CzvyCFpynvL/?igsh=eGkyZGp4MnN2dGh3" target="_blank">
+                <img src="C:\Users\virat\OneDrive\Documents\Akhand-\assets\FERARI.jpeg" alt="FERRARI Post">
+                <h3>FERRARI</h3>
+            </a>
+            <a href="https://www.instagram.com/reel/CyBEgiRSQR5/?igsh=YnhieThqaWVjcms2" target="_blank">
+                <img src="C:\Users\virat\OneDrive\Documents\Akhand-\assets\BEARDO.jpeg" alt="BEARDO Post">
+                <h3>BEARDO</h3>
+            </a>
+            <a href="https://www.instagram.com/reel/C_-mkzGyXSD/?igsh=MWRvNGtycmg4MzQ1dQ==" target="_blank">
+                <img src="C:\Users\virat\OneDrive\Documents\Akhand-\assets\FERARRI.jpeg" alt="SKODA Post">
+                <h3>SKODA</h3>
+            </a>
+        </div>
+    </section>
+
+    <section id="Services">
+        <h2>Commercial</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <p>1 IG Reel - ₹1.3L</p>
+                <p>1 IG Collab Reel - ₹1.5L</p>
+                <p>1 IG Video Story - ₹50K</p>
+            </div>
+            <div class="service-card">
+                <p>1 IG Static Post - ₹50K</p>
+                <p>1 IG Carousel Post - ₹70K</p>
+                <p>1 IG Static Story - ₹30K</p>
+            </div>
+            <div class="service-card">
+                <p>Promotional Rights - ₹25K</p>
+                <p>Exclusive Rights - ₹50K</p>
+                <p>Usage Rights - ₹30K</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" onclick="openYoutube()">
+        <h2><i class="fa-brands fa-youtube"></i> Youtube</h2>
+        <div class="youtube-content">
+            <blockquote>
+                <p class="yt-link">https://youtube.com/@akhandpratapsinghh</p>
+            </blockquote>
+            <p>Youtube Commercial</p>
+            <p>Youtube Short – ₹10K, Dedicated Long Video – ₹20K, Integrated Long Video – ₹15K</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://wa.me/7380319155" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="mailto:Work.akhandpratapsinghh@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://www.instagram.com/akhandpratapsinghh/profilecard/?igsh=MWlydWtzNHpybWJ3dw==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://linkedin.com/in/akhand-pratap-singh-4bb8b3186" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+        <p>&copy; 2026 AKHAND PRATAP SINGH. All rights reserved. Designed by Virat</p>
+    </footer>
+
+    <script>
+        function openYoutube() {
+            window.open("https://youtube.com/@akhandpratapsinghh", "_blank");
+        }
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
